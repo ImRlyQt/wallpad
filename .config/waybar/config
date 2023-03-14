@@ -1,0 +1,84 @@
+{
+    "position": "top", 
+    "height": 37,
+    "modules-left": ["wlr/workspaces"],
+    "modules-right": ["network", "pulseaudio", "battery", "custom/date", "clock", "custom/power"],
+    // Modules configuration
+	"wlr/workspaces": {
+		
+		"disable-scroll": true,
+		"all-outputs": true,
+		"format": "{icon}",
+	 	"persistent_workspaces": {
+	 		"1": [],
+	 		"2": [],
+	 		"3": [],
+	 		"4": [],
+	 		"5": [],
+	 		"6": [],
+	 		"7": [],
+	 		"8": [],
+	 		"9": [],
+	 		"10": [],
+	},
+		"on-click": "activate",
+         	"format-icons": {
+             		"1": "󰋜",
+             		"2": "󰖟",
+             		"3": "󰠮",
+             		"4": "󰭹",
+             		"5": "󱓷",
+             		"6": "󱇧",
+             		"7": "󰊢",
+             		"8": "󰖲",
+             		"9": "󰕧",
+             		"10": "󰝚",
+         }
+     },
+	"custom/date": {
+    		"format": "󰸗 {}",
+		"interval": 3600,
+		"exec": "/home/imrlyqt/bin/waybar-date.sh"
+	},
+	"custom/power": {
+		"format": "󰐥",
+		"on-click": "/home/imrlyqt/bin/waybar-power.sh"
+	},
+	"clock": {
+		"format": "󰅐 {:%H:%M}",
+        	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        	"format-alt": "{:%Y-%m-%d}"
+	},
+	"battery": {
+        	"states": {
+            		"warning": 30,
+            		"critical": 15,
+        	},
+        	"format": "{icon} {capacity}%",
+        	"format-charging": "󰂄 {capacity}%",
+        	"format-plugged": "󰂄{capacity}%",
+        	"format-alt": "{time} {icon}",
+        	"format-full": "󱈑 {capacity}%",
+        	"format-icons": ["󱊡", "󱊢", "󱊣"]
+	},
+	"network": {
+        	"format-wifi": "",
+        	"format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        	"format-linked": "{ifname} (No IP) ",
+        	"format-disconnected": "󰤮 Disconnected",
+        	"format-alt": "{ifname}: {essid}/{ipaddr}/{cidr}"
+	},
+	"pulseaudio": {
+		"format": "{icon}  {volume}%",
+        	"format-muted": "󰖁 Muted",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+    }
+}
